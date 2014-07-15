@@ -1,8 +1,8 @@
 /* global prompt:true */
-var prompt = require('sync-prompt').prompt;
-var chalk = require('chalk');
 
-var pets = [], people = [], goats = [], dogs = [],lemurs = [], cats = [], mice = [];
+var prompt = require('sync-prompt').prompt;
+
+var people = [], goats = [], dogs = [],lemurs = [], cats = [], mice = [];
 
 var person1 = {name:'bob', age: 10, pets:[]};
 var person2 = {name:'sam', age: 5, pets:[]};
@@ -59,17 +59,15 @@ while(input !== 'q') {
       mice.push(mouse);
       break;
   }
-  
     input = prompt('Enter (g)oat, (d)og, (l)emur, (c)at, (m)ouse, or (q)uit: ');
 }
 
 input = prompt('(b)ob, (s)am, (j)ill, or (q)uit: ');
 while(input !== 'q'){
-  for(var i = 0, i < people.length, i++){
+  for(var i = 0; i < people.length; i++){
     if(people[i].name[0] === input){
       var client = people[i];
       break;
-      }
     }
   }
 
@@ -86,19 +84,19 @@ while(input !== 'q'){
         console.log('Dogs: ',dogs);
         animals = dogs;
         break;
-      case 'l';
+      case 'l':
         console.log('Lemurs: ',lemurs);
         animals = lemurs
         break;
-      case 'c';
+      case 'c':
         console.log('Cats: ',cats);
         animals = cats;
         break;
-      case 'm';
+      case 'm':
         console.log('Mice: ',mice);
         animals = mice;
         break;
-    }
+  }
 
   name = prompt('What is the name of the animal you want to adopt? ');
 
@@ -109,16 +107,14 @@ while(input !== 'q'){
       break;
     }
   }
-console.log('Animal:',animal);
 
-animals.splice(index, 1);
-client.pets.push(animal);
-console.log('After adoption:',client);
-console.log('Animals array:',animals);
+  console.log('Animal:',animal);
+  animals.splice(index, 1);
+  client.pets.push(animal);
+  console.log('After adoption:',client);
+  console.log('Animals array:',animals);
 
-option = prompt('(b)ob, (s)am, (j)ill or (q)uit: ');
-
-}
+  option = prompt('(b)ob, (s)am, (j)ill or (q)uit: ');
 }
 
 console.log('goats:',goats);
